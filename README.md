@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# 원 드래그 및 연결 앱
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React로 만든 인터랙티브한 원 드래그 및 연결 애플리케이션입니다.
 
-## Available Scripts
+## 🚀 기능
 
-In the project directory, you can run:
+### 기본 기능
+- **16개의 원**: 4x4 격자로 배치된 다양한 색상의 원들
+- **원 이동**: 원을 클릭하고 2초 후 드래그하여 이동
+- **원 연결**: 원을 클릭하고 2초 전에 드래그하여 다른 원과 연결
+- **이름 편집**: 원을 더블클릭하여 이름 변경
 
-### `npm start`
+### 상세 기능
+- **이중 모드 시스템**:
+  - 2초 후 드래그: 원 이동 모드
+  - 2초 전 드래그: 연결 모드
+- **시각적 피드백**:
+  - 클릭된 원: 주황색 테두리
+  - 드래그 중인 원: 빨간색 테두리와 확대 효과
+  - 편집 중인 원: 주황색 테두리와 text 커서
+- **연결 관리**:
+  - 실시간 연결선 표시
+  - 중복 연결 방지
+  - 연결 개수 표시
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ 기술 스택
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React 18.2.0**
+- **JavaScript (ES6+)**
+- **CSS3**
+- **HTML5 Canvas**
 
-### `npm test`
+## 📦 설치 및 실행
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 로컬 개발 환경
 
-### `npm run build`
+1. **저장소 클론**
+   ```bash
+   git clone https://github.com/[your-username]/[your-repo-name].git
+   cd [your-repo-name]
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **의존성 설치**
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **개발 서버 실행**
+   ```bash
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **브라우저에서 확인**
+   ```
+   http://localhost:3000
+   ```
 
-### `npm run eject`
+### 배포
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **GitHub Pages 배포**
+   ```bash
+   npm run deploy
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🎮 사용 방법
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 원 이동
+1. 원을 클릭합니다
+2. 2초 동안 마우스를 누르고 있습니다
+3. 2초 후 원이 빨간색 테두리로 변경되면 드래그하여 이동
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 원 연결
+1. 원을 클릭합니다
+2. 2초 전에 마우스를 드래그합니다
+3. 빨간 점선이 나타나면 다른 원 위에서 마우스를 놓아 연결
 
-## Learn More
+### 이름 편집
+1. 원을 더블클릭합니다
+2. 입력 필드에 새 이름을 입력합니다
+3. Enter 키를 누르거나 다른 곳을 클릭하여 완료
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🌐 라이브 데모
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[GitHub Pages에서 확인하기](https://[your-github-username].github.io/[your-repo-name])
 
-### Code Splitting
+## 📁 프로젝트 구조
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+my-react-app/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── App.js          # 메인 컴포넌트
+│   ├── App.css         # 스타일시트
+│   └── index.js        # 앱 진입점
+├── package.json
+└── README.md
+```
 
-### Analyzing the Bundle Size
+## 🔧 주요 컴포넌트
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### App.js
+- 원들의 상태 관리
+- 마우스 이벤트 처리
+- 드래그 및 연결 로직
+- Canvas를 이용한 연결선 렌더링
 
-### Making a Progressive Web App
+### 주요 기능
+- `handleMouseDown`: 클릭 이벤트 처리
+- `handleMouseMove`: 드래그 및 연결 처리
+- `handleDoubleClick`: 이름 편집 모드
+- `drawConnections`: 연결선 그리기
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🎨 스타일링
 
-### Advanced Configuration
+- **반응형 디자인**: 모바일과 데스크톱 모두 지원
+- **부드러운 애니메이션**: CSS 트랜지션과 transform 활용
+- **직관적인 UI**: 색상과 크기로 상태 표시
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🤝 기여하기
 
-### Deployment
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 라이선스
 
-### `npm run build` fails to minify
+이 프로젝트는 MIT 라이선스 하에 배포됩니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📞 연락처
+
+프로젝트 링크: [https://github.com/[your-username]/[your-repo-name]](https://github.com/[your-username]/[your-repo-name])
